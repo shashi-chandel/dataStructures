@@ -78,7 +78,7 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		assertEquals(myThirdNode, popLast);
 	}
-	
+
 	@Test
 	public void given3Numbers_WhenSearching_ShouldReturnThatNumber() {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
@@ -90,5 +90,20 @@ public class MyLinkedListTest {
 		myLinkedList.append(myThirdNode);
 		MyNode<Integer> search = (MyNode<Integer>) myLinkedList.search(30);
 		assertEquals(mySecondNode, search);
+	}
+
+	@Test
+	public void given3Numbers_WhenInserting4th_ShouldInsertAtCorrectPosition() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(40);
+		MyNode<Integer> searchAndInsert = (MyNode<Integer>) myLinkedList.searchAndInsert(30, myFourthNode);
+		myLinkedList.printMyNodes();
+		assertEquals(mySecondNode, searchAndInsert);
 	}
 }
