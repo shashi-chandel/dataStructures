@@ -78,4 +78,17 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		assertEquals(myThirdNode, popLast);
 	}
+	
+	@Test
+	public void given3Numbers_WhenSearching_ShouldReturnThatNumber() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		MyNode<Integer> search = (MyNode<Integer>) myLinkedList.search(30);
+		assertEquals(mySecondNode, search);
+	}
 }

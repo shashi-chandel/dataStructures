@@ -1,6 +1,6 @@
 package com.capgemini.linkedlist;
 
-public class MyLinkedList {
+public class MyLinkedList<K> {
 	public INode head;
 	public INode tail;
 
@@ -66,5 +66,17 @@ public class MyLinkedList {
 		popLast = tempNode.getNext();
 		tail.setNext(null);
 		return popLast;
+	}
+	
+	public INode search(K key) {
+		INode tempNode = head;
+		while(tempNode!=null&&tempNode.getNext()!=null) {
+			if(tempNode.getKey().equals(key)) {
+				return tempNode;
+			}
+			else 
+				tempNode = tempNode.getNext();	
+		}
+		return null;
 	}
 }
