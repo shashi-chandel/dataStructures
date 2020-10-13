@@ -106,4 +106,21 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		assertEquals(mySecondNode, searchAndInsert);
 	}
+
+	@Test
+	public void given4Numbers_WhenRemovingOne_ShouldPassLinkedListTest() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myFourthNode);
+		MyNode<Integer> searchAndRemove = (MyNode<Integer>) myLinkedList.searchAndRemove(40);
+		System.out.print("Search and Remove. Size = " + myLinkedList.size() + " List: ");
+		myLinkedList.printMyNodes();
+		assertEquals(mySecondNode, searchAndRemove);
+	}
 }
